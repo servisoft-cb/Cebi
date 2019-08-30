@@ -1291,5 +1291,470 @@ object DMCadPessoa: TDMCadPessoa
     ProviderName = 'dspEmpresa'
     Left = 880
     Top = 144
+    object cdsEmpresaApel: TStringField
+      FieldName = 'Apel'
+      Required = True
+      FixedChar = True
+      Size = 15
+    end
+    object cdsEmpresaRazo: TStringField
+      FieldName = 'Raz'#227'o'
+      Required = True
+      FixedChar = True
+      Size = 90
+    end
+    object cdsEmpresaTipo: TStringField
+      FieldName = 'Tipo'
+      Required = True
+      FixedChar = True
+      Size = 15
+    end
+    object cdsEmpresaCadastro: TSQLTimeStampField
+      FieldName = 'Cadastro'
+      Required = True
+    end
+    object cdsEmpresaPessoa: TStringField
+      FieldName = 'Pessoa'
+      Required = True
+      FixedChar = True
+      Size = 8
+    end
+    object cdsEmpresaCNPJCPF: TStringField
+      FieldName = 'CNPJ/CPF'
+      FixedChar = True
+      Size = 18
+    end
+    object cdsEmpresaIEstRG: TStringField
+      FieldName = 'IEst/RG'
+      FixedChar = True
+      Size = 18
+    end
+    object cdsEmpresaCCM: TStringField
+      FieldName = 'CCM'
+      FixedChar = True
+    end
+    object cdsEmpresaRamo: TIntegerField
+      FieldName = 'Ramo'
+      Required = True
+    end
+    object cdsEmpresaEndereo: TStringField
+      FieldName = 'Endere'#231'o'
+      FixedChar = True
+      Size = 70
+    end
+    object cdsEmpresaBairro: TStringField
+      FieldName = 'Bairro'
+      FixedChar = True
+    end
+    object cdsEmpresaCEP: TStringField
+      FieldName = 'CEP'
+      FixedChar = True
+      Size = 9
+    end
+    object cdsEmpresaCidade: TStringField
+      FieldName = 'Cidade'
+      FixedChar = True
+      Size = 33
+    end
+    object cdsEmpresaEstado: TStringField
+      FieldName = 'Estado'
+      FixedChar = True
+      Size = 2
+    end
+    object cdsEmpresaSuframa: TStringField
+      FieldName = 'Suframa'
+      FixedChar = True
+      Size = 15
+    end
+    object cdsEmpresaRegio: TStringField
+      FieldName = 'Regi'#227'o'
+      FixedChar = True
+      Size = 4
+    end
+    object cdsEmpresaPas: TStringField
+      FieldName = 'Pa'#237's'
+      FixedChar = True
+      Size = 3
+    end
+    object cdsEmpresaFone1: TStringField
+      FieldName = 'Fone1'
+      FixedChar = True
+      Size = 15
+    end
+    object cdsEmpresaRamal1: TStringField
+      FieldName = 'Ramal1'
+      FixedChar = True
+      Size = 10
+    end
+    object cdsEmpresaFone2: TStringField
+      FieldName = 'Fone2'
+      FixedChar = True
+      Size = 15
+    end
+    object cdsEmpresaRamal2: TStringField
+      FieldName = 'Ramal2'
+      FixedChar = True
+      Size = 10
+    end
+    object cdsEmpresaFax: TStringField
+      FieldName = 'Fax'
+      FixedChar = True
+      Size = 15
+    end
+    object cdsEmpresaContato: TStringField
+      FieldName = 'Contato'
+      FixedChar = True
+      Size = 50
+    end
+    object cdsEmpresaDpto: TStringField
+      FieldName = 'Dpto'
+      FixedChar = True
+      Size = 40
+    end
+    object cdsEmpresaVendedor: TIntegerField
+      FieldName = 'Vendedor'
+    end
+    object cdsEmpresaCondPag: TSmallintField
+      FieldName = 'CondPag'
+    end
+    object cdsEmpresaCrdito: TFMTBCDField
+      FieldName = 'Cr'#233'dito'
+      Precision = 19
+    end
+    object cdsEmpresaTransp: TIntegerField
+      FieldName = 'Transp'
+    end
+    object cdsEmpresaemail: TStringField
+      FieldName = 'e-mail'
+      FixedChar = True
+      Size = 50
+    end
+    object cdsEmpresaSite: TStringField
+      FieldName = 'Site'
+      FixedChar = True
+      Size = 80
+    end
+    object cdsEmpresaBloqueado: TStringField
+      FieldName = 'Bloqueado'
+      FixedChar = True
+      Size = 80
+    end
+    object cdsEmpresaObsFinanceira: TMemoField
+      FieldName = 'Obs Financeira'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object cdsEmpresaObsGerais: TMemoField
+      FieldName = 'Obs Gerais'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object cdsEmpresaObservaesGlobais: TMemoField
+      FieldName = 'Observa'#231#245'es Globais'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object cdsEmpresaHora: TStringField
+      FieldName = 'Hora'
+      FixedChar = True
+      Size = 5
+    end
+    object cdsEmpresaHora2: TStringField
+      FieldName = 'Hora2'
+      FixedChar = True
+      Size = 5
+    end
+    object cdsEmpresaTabeladePreos: TIntegerField
+      FieldName = 'Tabela de Pre'#231'os'
+    end
+    object cdsEmpresaVendedor2: TIntegerField
+      FieldName = 'Vendedor2'
+    end
+    object cdsEmpresaVendedor3: TIntegerField
+      FieldName = 'Vendedor3'
+    end
+    object cdsEmpresaltimaAtualizao: TSQLTimeStampField
+      FieldName = #218'ltima Atualiza'#231#227'o'
+    end
+    object cdsEmpresaltimaAtualizaoHora: TSQLTimeStampField
+      FieldName = #218'ltima Atualiza'#231#227'o Hora'
+    end
+    object cdsEmpresaProcedncia: TSmallintField
+      FieldName = 'Proced'#234'ncia'
+    end
+    object cdsEmpresaClienteBloqueado: TBooleanField
+      FieldName = 'Cliente Bloqueado'
+      Required = True
+    end
+    object cdsEmpresaTipodeCompra: TStringField
+      FieldName = 'Tipo de Compra'
+      FixedChar = True
+      Size = 8
+    end
+    object cdsEmpresaConta: TIntegerField
+      FieldName = 'Conta'
+    end
+    object cdsEmpresaBanco: TIntegerField
+      FieldName = 'Banco'
+    end
+    object cdsEmpresaContaContbilCliente: TIntegerField
+      FieldName = 'Conta Cont'#225'bil Cliente'
+    end
+    object cdsEmpresaContaContbilFornecedor: TIntegerField
+      FieldName = 'Conta Cont'#225'bil Fornecedor'
+    end
+    object cdsEmpresaAgncia: TStringField
+      FieldName = 'Ag'#234'ncia'
+      FixedChar = True
+      Size = 5
+    end
+    object cdsEmpresaDgitodaAgncia: TStringField
+      FieldName = 'D'#237'gito da Ag'#234'ncia'
+      FixedChar = True
+      Size = 1
+    end
+    object cdsEmpresaContaCorrente: TStringField
+      FieldName = 'Conta Corrente'
+      FixedChar = True
+      Size = 13
+    end
+    object cdsEmpresaDgitodaContaCorrente: TStringField
+      FieldName = 'D'#237'gito da Conta Corrente'
+      FixedChar = True
+      Size = 2
+    end
+    object cdsEmpresaDescontoporPontualidade: TFMTBCDField
+      FieldName = 'Desconto por Pontualidade'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaDescPorCliente: TFMTBCDField
+      FieldName = 'DescPorCliente'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaFixVar: TStringField
+      FieldName = 'FixVar'
+      Required = True
+      FixedChar = True
+      Size = 8
+    end
+    object cdsEmpresaAbrEmp: TStringField
+      FieldName = 'AbrEmp'
+      FixedChar = True
+      Size = 30
+    end
+    object cdsEmpresaPercFrete: TFMTBCDField
+      FieldName = 'PercFrete'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaPercEmbalagem: TFMTBCDField
+      FieldName = 'PercEmbalagem'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaBCOPGT: TStringField
+      FieldName = 'BCOPGT'
+      FixedChar = True
+      Size = 3
+    end
+    object cdsEmpresaCONMRE: TStringField
+      FieldName = 'CONMRE'
+      FixedChar = True
+      Size = 1
+    end
+    object cdsEmpresaVariasTabelas: TBooleanField
+      FieldName = 'VariasTabelas'
+      Required = True
+    end
+    object cdsEmpresaClienteIntFiscal: TIntegerField
+      FieldName = 'ClienteIntFiscal'
+    end
+    object cdsEmpresaFornecedorIntFiscal: TIntegerField
+      FieldName = 'FornecedorIntFiscal'
+    end
+    object cdsEmpresaCodFoxDados: TIntegerField
+      FieldName = 'CodFoxDados'
+    end
+    object cdsEmpresacalcula_pis: TBooleanField
+      FieldName = 'calcula_pis'
+      Required = True
+    end
+    object cdsEmpresacalcula_cofins: TBooleanField
+      FieldName = 'calcula_cofins'
+      Required = True
+    end
+    object cdsEmpresacontribuinte_icms: TBooleanField
+      FieldName = 'contribuinte_icms'
+      Required = True
+    end
+    object cdsEmpresachk_simples_nacional: TBooleanField
+      FieldName = 'chk_simples_nacional'
+      Required = True
+    end
+    object cdsEmpresacd_municipio_ibge: TIntegerField
+      FieldName = 'cd_municipio_ibge'
+    end
+    object cdsEmpresacd_cnae_fiscal: TIntegerField
+      FieldName = 'cd_cnae_fiscal'
+    end
+    object cdsEmpresacod_exportador: TStringField
+      FieldName = 'cod_exportador'
+      FixedChar = True
+      Size = 60
+    end
+    object cdsEmpresacodigo_formapagamento: TIntegerField
+      FieldName = 'codigo_formapagamento'
+    end
+    object cdsEmpresaper_credito_icms: TFMTBCDField
+      FieldName = 'per_credito_icms'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaemail_nfe: TStringField
+      FieldName = 'email_nfe'
+      FixedChar = True
+      Size = 255
+    end
+    object cdsEmpresadescontarbaseST_SUFRAMA: TBooleanField
+      FieldName = 'descontarbaseST_SUFRAMA'
+      Required = True
+    end
+    object cdsEmpresaprorural: TIntegerField
+      FieldName = 'prorural'
+    end
+    object cdsEmpresatplograd: TStringField
+      FieldName = 'tplograd'
+      FixedChar = True
+      Size = 4
+    end
+    object cdsEmpresacomplem: TStringField
+      FieldName = 'complem'
+      FixedChar = True
+      Size = 50
+    end
+    object cdsEmpresaddd_cel: TStringField
+      FieldName = 'ddd_cel'
+      FixedChar = True
+      Size = 2
+    end
+    object cdsEmpresacelular: TStringField
+      FieldName = 'celular'
+      FixedChar = True
+      Size = 9
+    end
+    object cdsEmpresadata_integracao: TSQLTimeStampField
+      FieldName = 'data_integracao'
+    end
+    object cdsEmpresaprod_rural: TBooleanField
+      FieldName = 'prod_rural'
+      Required = True
+    end
+    object cdsEmpresatp_doc_RG_IE: TStringField
+      FieldName = 'tp_doc_RG_IE'
+      FixedChar = True
+      Size = 11
+    end
+    object cdsEmpresaper_pis: TFMTBCDField
+      FieldName = 'per_pis'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaper_cofins: TFMTBCDField
+      FieldName = 'per_cofins'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaper_ret_csll: TFMTBCDField
+      FieldName = 'per_ret_csll'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresaper_ret_ir: TFMTBCDField
+      FieldName = 'per_ret_ir'
+      Precision = 32
+      Size = 10
+    end
+    object cdsEmpresareter_pis_cof_cs_ir_produto: TBooleanField
+      FieldName = 'reter_pis_cof_cs_ir_produto'
+    end
+    object cdsEmpresaObs_para_Nota_Fiscal: TMemoField
+      FieldName = 'Obs_para_Nota_Fiscal'
+      BlobType = ftMemo
+      Size = 1
+    end
+    object cdsEmpresadata_base_1: TSQLTimeStampField
+      FieldName = 'data_base_1'
+    end
+    object cdsEmpresadata_base_2: TSQLTimeStampField
+      FieldName = 'data_base_2'
+    end
+    object cdsEmpresaindice_data_base_1: TStringField
+      FieldName = 'indice_data_base_1'
+      FixedChar = True
+      Size = 10
+    end
+    object cdsEmpresaindice_data_base_2: TStringField
+      FieldName = 'indice_data_base_2'
+      FixedChar = True
+      Size = 10
+    end
+    object cdsEmpresanr_protocolo_portal: TStringField
+      FieldName = 'nr_protocolo_portal'
+      FixedChar = True
+      Size = 50
+    end
+    object cdsEmpresaintegracao_portal: TIntegerField
+      FieldName = 'integracao_portal'
+    end
+    object cdsEmpresarejeicao_integracao_portal: TStringField
+      FieldName = 'rejeicao_integracao_portal'
+      FixedChar = True
+      Size = 2000
+    end
+    object cdsEmpresaintegracao_bi: TIntegerField
+      FieldName = 'integracao_bi'
+    end
+    object cdsEmpresaident_estrangeiro: TStringField
+      FieldName = 'ident_estrangeiro'
+      FixedChar = True
+    end
+    object cdsEmpresautiliza_campos_nfe: TBooleanField
+      FieldName = 'utiliza_campos_nfe'
+    end
+    object cdsEmpresanro_endereco: TStringField
+      FieldName = 'nro_endereco'
+      FixedChar = True
+      Size = 60
+    end
+    object cdsEmpresausar_aliq_diferenciada: TBooleanField
+      FieldName = 'usar_aliq_diferenciada'
+    end
+    object cdsEmpresaconsumidor_final: TBooleanField
+      FieldName = 'consumidor_final'
+    end
+    object cdsEmpresaintegrou_pdv: TIntegerField
+      FieldName = 'integrou_pdv'
+      Required = True
+    end
+    object cdsEmpresaid_empresa_pdv: TIntegerField
+      FieldName = 'id_empresa_pdv'
+      Required = True
+    end
+    object cdsEmpresaobs_remessa_boleto: TStringField
+      FieldName = 'obs_remessa_boleto'
+      FixedChar = True
+      Size = 500
+    end
+    object cdsEmpresaintegrou_mobile: TIntegerField
+      FieldName = 'integrou_mobile'
+      Required = True
+    end
+    object cdsEmpresaaliquota_funrural: TFMTBCDField
+      FieldName = 'aliquota_funrural'
+      Precision = 32
+      Size = 10
+    end
   end
 end

@@ -814,35 +814,33 @@ object DMCadAssinatura: TDMCadAssinatura
       FieldName = 'Unidade'
       Required = True
       FixedChar = True
-      Size = 6
+      Size = 3
     end
     object cdsProdutosUnidadeEntrada: TStringField
       FieldName = 'UnidadeEntrada'
       FixedChar = True
-      Size = 6
+      Size = 3
     end
     object cdsProdutosUnidadeAuxiliar: TStringField
       FieldName = 'UnidadeAuxiliar'
       FixedChar = True
-      Size = 6
+      Size = 3
     end
     object cdsProdutosUnidadeAuxiliar1: TStringField
       FieldName = 'UnidadeAuxiliar1'
       FixedChar = True
-      Size = 6
+      Size = 3
     end
     object cdsProdutosUnidadedeCompra: TStringField
       FieldName = 'Unidade de Compra'
       FixedChar = True
-      Size = 6
+      Size = 3
     end
     object cdsProdutosAtacadosomentesemaiorque: TIntegerField
       FieldName = 'Atacado somente se maior que'
     end
-    object cdsProdutosPesoLquido: TFMTBCDField
+    object cdsProdutosPesoLquido: TFloatField
       FieldName = 'Peso L'#237'quido'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosLocalizaodoProduto: TStringField
       FieldName = 'Localiza'#231#227'o do Produto'
@@ -879,113 +877,73 @@ object DMCadAssinatura: TDMCadAssinatura
     object cdsProdutosLetradoNCM: TStringField
       FieldName = 'Letra do NCM'
       FixedChar = True
-      Size = 2
+      Size = 1
     end
-    object cdsProdutosReal: TFMTBCDField
+    object cdsProdutosReal: TFloatField
       FieldName = 'Real'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosVirtual: TFMTBCDField
+    object cdsProdutosVirtual: TFloatField
       FieldName = 'Virtual'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosMnimo: TFMTBCDField
+    object cdsProdutosMnimo: TFloatField
       FieldName = 'M'#237'nimo'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosMximo: TFMTBCDField
+    object cdsProdutosMximo: TFloatField
       FieldName = 'M'#225'ximo'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosMdiadeVendas: TFMTBCDField
+    object cdsProdutosMdiadeVendas: TFloatField
       FieldName = 'M'#233'dia de Vendas'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosMdiadeFabricao: TFMTBCDField
+    object cdsProdutosMdiadeFabricao: TFloatField
       FieldName = 'M'#233'dia de Fabrica'#231#227'o'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosLoteMnimodeCompras: TFMTBCDField
+    object cdsProdutosLoteMnimodeCompras: TFloatField
       FieldName = 'Lote M'#237'nimo de Compras'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosLoteMnimodeVendas: TFMTBCDField
+    object cdsProdutosLoteMnimodeVendas: TFloatField
       FieldName = 'Lote M'#237'nimo de Vendas'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosLoteMnimodeFabricao: TFMTBCDField
+    object cdsProdutosLoteMnimodeFabricao: TFloatField
       FieldName = 'Lote M'#237'nimo de Fabrica'#231#227'o'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosValordeCompra: TFMTBCDField
+    object cdsProdutosValordeCompra: TFloatField
       FieldName = 'Valor de Compra'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosValordeVenda: TFMTBCDField
+    object cdsProdutosValordeVenda: TFloatField
       FieldName = 'Valor de Venda'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosMargemdeVenda: TFMTBCDField
+    object cdsProdutosMargemdeVenda: TFloatField
       FieldName = 'Margem de Venda'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosVendaAtacado: TFMTBCDField
+    object cdsProdutosVendaAtacado: TFloatField
       FieldName = 'Venda Atacado'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosVendaVarejo: TFMTBCDField
+    object cdsProdutosVendaVarejo: TFloatField
       FieldName = 'Venda Varejo'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosMargemAtacado: TFMTBCDField
+    object cdsProdutosMargemAtacado: TFloatField
       FieldName = 'Margem Atacado'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosMargemVarejo: TFMTBCDField
+    object cdsProdutosMargemVarejo: TFloatField
       FieldName = 'Margem Varejo'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosValordeTransferncia: TFMTBCDField
+    object cdsProdutosValordeTransferncia: TFloatField
       FieldName = 'Valor de Transfer'#234'ncia'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosValorPromoo: TFMTBCDField
+    object cdsProdutosValorPromoo: TFloatField
       FieldName = 'Valor Promo'#231#227'o'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosValidadedaPromoo: TSQLTimeStampField
       FieldName = 'Validade da Promo'#231#227'o'
     end
-    object cdsProdutosValorPromooAtacado: TFMTBCDField
+    object cdsProdutosValorPromooAtacado: TFloatField
       FieldName = 'Valor Promo'#231#227'o Atacado'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosValidadedaPromooAtacado: TSQLTimeStampField
       FieldName = 'Validade da Promo'#231#227'o Atacado'
     end
-    object cdsProdutosValorPromooVarejo: TFMTBCDField
+    object cdsProdutosValorPromooVarejo: TFloatField
       FieldName = 'Valor Promo'#231#227'o Varejo'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosValidadedaPromooVarejo: TSQLTimeStampField
       FieldName = 'Validade da Promo'#231#227'o Varejo'
@@ -996,10 +954,8 @@ object DMCadAssinatura: TDMCadAssinatura
     object cdsProdutosltimaAtualizaodeVenda: TSQLTimeStampField
       FieldName = #218'ltima Atualiza'#231#227'o de Venda'
     end
-    object cdsProdutosQuantidadeporVolume: TFMTBCDField
+    object cdsProdutosQuantidadeporVolume: TFloatField
       FieldName = 'Quantidade por Volume'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosNmerodoDesenho: TStringField
       FieldName = 'N'#250'mero do Desenho'
@@ -1020,10 +976,8 @@ object DMCadAssinatura: TDMCadAssinatura
       FieldName = 'Lista de Pre'#231'os'
       Required = True
     end
-    object cdsProdutosComisso: TFMTBCDField
+    object cdsProdutosComisso: TFloatField
       FieldName = 'Comiss'#227'o'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosMoedaVenda: TStringField
       FieldName = 'Moeda Venda'
@@ -1034,20 +988,14 @@ object DMCadAssinatura: TDMCadAssinatura
     object cdsProdutosCondiodePagamento: TSmallintField
       FieldName = 'Condi'#231#227'o de Pagamento'
     end
-    object cdsProdutosMargemdeVendaSubstituioTr: TFMTBCDField
+    object cdsProdutosMargemdeVendaSubstituioTr: TFloatField
       FieldName = 'Margem de Venda Substitui'#231#227'o Tr'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosValordosMateriais: TFMTBCDField
+    object cdsProdutosValordosMateriais: TFloatField
       FieldName = 'Valor dos Materiais'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosValordaModeObra: TFMTBCDField
+    object cdsProdutosValordaModeObra: TFloatField
       FieldName = 'Valor da M'#227'o de Obra'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosCentro: TIntegerField
       FieldName = 'Centro'
@@ -1107,11 +1055,9 @@ object DMCadAssinatura: TDMCadAssinatura
       FixedChar = True
       Size = 100
     end
-    object cdsProdutosFatordeConversodeUnidadep: TFMTBCDField
+    object cdsProdutosFatordeConversodeUnidadep: TFloatField
       FieldName = 'Fator de Convers'#227'o de Unidade p'
       Required = True
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosObrigatrioLicena: TBooleanField
       FieldName = 'Obrigat'#243'rio Licen'#231'a'
@@ -1127,25 +1073,19 @@ object DMCadAssinatura: TDMCadAssinatura
     object cdsProdutosVendedor01: TSmallintField
       FieldName = 'Vendedor01'
     end
-    object cdsProdutosValordeCompraOriginal: TFMTBCDField
+    object cdsProdutosValordeCompraOriginal: TFloatField
       FieldName = 'Valor de Compra Original'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosValordeDescontonaCompra: TFMTBCDField
+    object cdsProdutosValordeDescontonaCompra: TFloatField
       FieldName = 'Valor de Desconto na Compra'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosUnidadeVlrVenda: TStringField
       FieldName = 'UnidadeVlrVenda'
       FixedChar = True
-      Size = 6
+      Size = 3
     end
-    object cdsProdutosArea: TFMTBCDField
+    object cdsProdutosArea: TFloatField
       FieldName = 'Area'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosCODIPI: TIntegerField
       FieldName = 'CODIPI'
@@ -1155,30 +1095,22 @@ object DMCadAssinatura: TDMCadAssinatura
       FixedChar = True
       Size = 12
     end
-    object cdsProdutosCUSPRO: TFMTBCDField
+    object cdsProdutosCUSPRO: TFloatField
       FieldName = 'CUSPRO'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosPerDmx: TFMTBCDField
+    object cdsProdutosPerDmx: TFloatField
       FieldName = 'PerDmx'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosICMVEN: TFMTBCDField
+    object cdsProdutosICMVEN: TFloatField
       FieldName = 'ICMVEN'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosICMCOM: TFMTBCDField
+    object cdsProdutosICMCOM: TFloatField
       FieldName = 'ICMCOM'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosUMEPRO: TStringField
       FieldName = 'UMEPRO'
       FixedChar = True
-      Size = 6
+      Size = 3
     end
     object cdsProdutoscd_conta_contabil: TIntegerField
       FieldName = 'cd_conta_contabil'
@@ -1189,6 +1121,7 @@ object DMCadAssinatura: TDMCadAssinatura
     object cdsProdutospr_aliquota_int_icmsst: TFMTBCDField
       FieldName = 'pr_aliquota_int_icmsst'
       Precision = 19
+      Size = 8
     end
     object cdsProdutosultimo_lote: TStringField
       FieldName = 'ultimo_lote'
@@ -1203,6 +1136,7 @@ object DMCadAssinatura: TDMCadAssinatura
     object cdsProdutospeso_embalagem: TFMTBCDField
       FieldName = 'peso_embalagem'
       Precision = 19
+      Size = 8
     end
     object cdsProdutossit_trib_ipi: TStringField
       FieldName = 'sit_trib_ipi'
@@ -1231,15 +1165,11 @@ object DMCadAssinatura: TDMCadAssinatura
     object cdsProdutosdata_integracao: TSQLTimeStampField
       FieldName = 'data_integracao'
     end
-    object cdsProdutosaliquota_diferenciada: TFMTBCDField
+    object cdsProdutosaliquota_diferenciada: TFloatField
       FieldName = 'aliquota_diferenciada'
-      Precision = 32
-      Size = 10
     end
-    object cdsProdutosconteudo_importacao: TFMTBCDField
+    object cdsProdutosconteudo_importacao: TFloatField
       FieldName = 'conteudo_importacao'
-      Precision = 32
-      Size = 10
     end
     object cdsProdutosproduto_importacao: TBooleanField
       FieldName = 'produto_importacao'

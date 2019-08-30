@@ -22,7 +22,7 @@ object frmCadContrato: TfrmCadContrato
     Left = 0
     Top = 0
     Width = 978
-    Height = 535
+    Height = 536
     ActivePage = TS_Consulta
     ActivePageDefault = TS_Consulta
     Align = alClient
@@ -1005,7 +1005,7 @@ object frmCadContrato: TfrmCadContrato
         Left = 0
         Top = 168
         Width = 974
-        Height = 310
+        Height = 311
         Align = alClient
         Ctl3D = False
         DataSource = DMCadContrato.dsContrato_Consulta
@@ -1124,7 +1124,7 @@ object frmCadContrato: TfrmCadContrato
       end
       object StaticText1: TStaticText
         Left = 0
-        Top = 495
+        Top = 496
         Width = 974
         Height = 17
         Align = alBottom
@@ -1140,7 +1140,7 @@ object frmCadContrato: TfrmCadContrato
       end
       object StaticText3: TStaticText
         Left = 0
-        Top = 478
+        Top = 479
         Width = 974
         Height = 17
         Align = alBottom
@@ -1216,7 +1216,7 @@ object frmCadContrato: TfrmCadContrato
         Left = 0
         Top = 35
         Width = 974
-        Height = 477
+        Height = 478
         ActivePage = TS_Pessoa_Dados
         ActivePageDefault = TS_Pessoa_Dados
         Align = alClient
@@ -1731,7 +1731,7 @@ object frmCadContrato: TfrmCadContrato
           end
           object StaticText2: TStaticText
             Left = 0
-            Top = 437
+            Top = 438
             Width = 970
             Height = 17
             Align = alBottom

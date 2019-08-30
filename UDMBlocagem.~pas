@@ -1,4 +1,4 @@
-unit UDMCadAssinatura;
+unit UDMBlocagem;
 
 interface
 
@@ -6,53 +6,216 @@ uses
   SysUtils, Classes, FMTBcd, DB, DBClient, Provider, SqlExpr;
 
 type
-  TDMCadAssinatura = class(TDataModule)
+  TDMBlocagem = class(TDataModule)
+    sdsContrato: TSQLDataSet;
+    dspContrato: TDataSetProvider;
+    cdsContrato: TClientDataSet;
+    dsContrato: TDataSource;
+    dsProdutos: TDataSource;
+    sdsContratoID_CLIENTE: TIntegerField;
+    sdsContratoID_ASSINATURA: TIntegerField;
+    sdsContratoDTCONTRATO: TDateField;
+    sdsContratoDTCOBRANCA: TDateField;
+    sdsContratoQTD: TFloatField;
+    sdsContratoPERIODO: TStringField;
+    sdsContratoDTENCERRAMENTO: TDateField;
+    cdsContratoID_CLIENTE: TIntegerField;
+    cdsContratoID_ASSINATURA: TIntegerField;
+    cdsContratoDTCONTRATO: TDateField;
+    cdsContratoDTCOBRANCA: TDateField;
+    cdsContratoQTD: TFloatField;
+    cdsContratoPERIODO: TStringField;
+    cdsContratoDTENCERRAMENTO: TDateField;
+    dsEmpresa: TDataSource;
+    sdsContratoID_PERIODO: TIntegerField;
+    cdsContratoID_PERIODO: TIntegerField;
+    sdsContratoAPEL_EBS: TStringField;
+    cdsContratoAPEL_EBS: TStringField;
+    sdsContratoVLR_UNITARIO: TFloatField;
+    sdsContratoVLR_TOTAL: TFloatField;
+    cdsContratoVLR_UNITARIO: TFloatField;
+    cdsContratoVLR_TOTAL: TFloatField;
+    sdsContratoGEROU_DUPLICATA: TStringField;
+    cdsContratoGEROU_DUPLICATA: TStringField;
+    mBlocagem: TClientDataSet;
+    dsmBlocagem: TDataSource;
+    mBlocagemTipo: TStringField;
+    mBlocagemNome: TStringField;
+    mBlocagemEndereco: TStringField;
+    mBlocagemBairro: TStringField;
+    mBlocagemCidade: TStringField;
+    mBlocagemUF: TStringField;
+    mBlocagemCep: TStringField;
+    mBlocagemDtEncerramento: TDateField;
+    mBlocagemDtInicio: TDateField;
+    mBlocagemNumContrato: TStringField;
+    sdsContratoID: TFMTBCDField;
+    sdsContratoNUM_CONTRATO: TStringField;
+    cdsContratoID: TFMTBCDField;
+    cdsContratoNUM_CONTRATO: TStringField;
     sdsAssinatura: TSQLDataSet;
-    dspAssinatura: TDataSetProvider;
-    cdsAssinatura: TClientDataSet;
-    dsAssinatura: TDataSource;
-    cdsAssinaturaID: TIntegerField;
-    cdsAssinaturaNOME: TStringField;
-    cdsAssinaturaOBS: TMemoField;
-    cdsAssinaturaVALOR: TFloatField;
-    cdsAssinaturaDTATUALIZACAO_VLR: TDateField;
     sdsAssinaturaID: TIntegerField;
     sdsAssinaturaNOME: TStringField;
     sdsAssinaturaOBS: TMemoField;
     sdsAssinaturaVALOR: TFloatField;
     sdsAssinaturaDTATUALIZACAO_VLR: TDateField;
+    sdsAssinaturaID_PERIODO: TIntegerField;
+    dspAssinatura: TDataSetProvider;
+    cdsAssinatura: TClientDataSet;
+    cdsAssinaturaID: TIntegerField;
+    cdsAssinaturaNOME: TStringField;
+    cdsAssinaturaOBS: TMemoField;
+    cdsAssinaturaVALOR: TFloatField;
+    cdsAssinaturaDTATUALIZACAO_VLR: TDateField;
+    cdsAssinaturaID_PERIODO: TIntegerField;
+    dsAssinatura: TDataSource;
+    sdsContratoNOMEASSINATURA: TStringField;
+    cdsContratoNOMEASSINATURA: TStringField;
+    mBlocagemNomeAssinatura: TStringField;
+    sdsControle_Estoque: TSQLDataSet;
+    dspControle_Estoque: TDataSetProvider;
+    cdsControle_Estoque: TClientDataSet;
+    dsControle_Estoque: TDataSource;
+    sdsControle_EstoqueID: TIntegerField;
+    sdsControle_EstoqueNUM_CONTRATO: TStringField;
+    sdsControle_EstoqueDTREFERENCIA: TDateField;
+    cdsControle_EstoqueID: TIntegerField;
+    cdsControle_EstoqueNUM_CONTRATO: TStringField;
+    cdsControle_EstoqueDTREFERENCIA: TDateField;
+    sdsControle_EstoqueMES: TIntegerField;
+    sdsControle_EstoqueANO: TIntegerField;
+    cdsControle_EstoqueMES: TIntegerField;
+    cdsControle_EstoqueANO: TIntegerField;
     dsAssinatura_Mestre: TDataSource;
     sdsAssinatura_Livro: TSQLDataSet;
     sdsAssinatura_LivroID: TIntegerField;
     sdsAssinatura_LivroITEM: TIntegerField;
     sdsAssinatura_LivroQTD: TIntegerField;
+    sdsAssinatura_LivroCOD_PRODUTO_EBS: TStringField;
+    sdsAssinatura_LivroNOME_PRODUTO_EBS: TStringField;
     cdsAssinatura_Livro: TClientDataSet;
     cdsAssinaturasdsAssinatura_Livro: TDataSetField;
     cdsAssinatura_LivroID: TIntegerField;
     cdsAssinatura_LivroITEM: TIntegerField;
     cdsAssinatura_LivroQTD: TIntegerField;
-    dsAssinatura_Livro: TDataSource;
-    sdsAssinatura_LivroNOME_PRODUTO_EBS: TStringField;
-    cdsAssinatura_LivroNOME_PRODUTO_EBS: TStringField;
-    cdsAssinatura_LivrolkNomeProduto: TStringField;
-    sdsAssinatura_LivroCOD_PRODUTO_EBS: TStringField;
     cdsAssinatura_LivroCOD_PRODUTO_EBS: TStringField;
-    sdsAssinaturaID_PERIODO: TIntegerField;
-    cdsAssinaturaID_PERIODO: TIntegerField;
-    sdsPeriodo: TSQLDataSet;
-    sdsPeriodoID: TIntegerField;
-    sdsPeriodoNOME: TStringField;
-    sdsPeriodoQTD_MES: TIntegerField;
-    dspPeriodo: TDataSetProvider;
-    cdsPeriodo: TClientDataSet;
-    cdsPeriodoID: TIntegerField;
-    cdsPeriodoNOME: TStringField;
-    cdsPeriodoQTD_MES: TIntegerField;
-    dsPeriodo: TDataSource;
-    dsProdutos: TDataSource;
+    cdsAssinatura_LivroNOME_PRODUTO_EBS: TStringField;
+    mBlocagemID_Assinatura: TIntegerField;
+    mBlocagemApel_EBS: TStringField;
+    sdsEstMovimento: TSQLDataSet;
+    sdsEstMovimentoCODLOC: TStringField;
+    sdsEstMovimentoCODPRO: TStringField;
+    sdsEstMovimentoDATMOV: TSQLTimeStampField;
+    sdsEstMovimentoSEQMOV: TIntegerField;
+    sdsEstMovimentoCODPRJ: TIntegerField;
+    sdsEstMovimentoNRODOC: TIntegerField;
+    sdsEstMovimentoTIPREG: TStringField;
+    sdsEstMovimentoCODFOR: TStringField;
+    sdsEstMovimentoSEQITE: TIntegerField;
+    sdsEstMovimentoENTSAI: TStringField;
+    sdsEstMovimentoQTDMOV: TFloatField;
+    sdsEstMovimentoVLRMOV: TFloatField;
+    sdsEstMovimentoQTDANT: TFloatField;
+    sdsEstMovimentoQTDAPO: TFloatField;
+    sdsEstMovimentoORIMOV: TStringField;
+    sdsEstMovimentoCODCCU: TIntegerField;
+    sdsEstMovimentoCODCTF: TIntegerField;
+    sdsEstMovimentoHORMOV: TIntegerField;
+    sdsEstMovimentoMIGMOV: TBooleanField;
+    sdsEstMovimentoCUSPRO: TFloatField;
+    sdsEstMovimentoANOASS: TIntegerField;
+    sdsEstMovimentoVLRANT: TFloatField;
+    sdsEstMovimentoVLRAPOS: TFloatField;
+    sdsEstMovimentoCUSTMEDPRO: TFloatField;
+    sdsEstMovimentoregistro_integrado: TBooleanField;
+    sdsEstMovimentodata_integracao: TSQLTimeStampField;
+    dspEstMovimento: TDataSetProvider;
+    cdsEstMovimento: TClientDataSet;
+    cdsEstMovimentoCODLOC: TStringField;
+    cdsEstMovimentoCODPRO: TStringField;
+    cdsEstMovimentoDATMOV: TSQLTimeStampField;
+    cdsEstMovimentoSEQMOV: TIntegerField;
+    cdsEstMovimentoCODPRJ: TIntegerField;
+    cdsEstMovimentoNRODOC: TIntegerField;
+    cdsEstMovimentoTIPREG: TStringField;
+    cdsEstMovimentoCODFOR: TStringField;
+    cdsEstMovimentoSEQITE: TIntegerField;
+    cdsEstMovimentoENTSAI: TStringField;
+    cdsEstMovimentoQTDMOV: TFloatField;
+    cdsEstMovimentoVLRMOV: TFloatField;
+    cdsEstMovimentoQTDANT: TFloatField;
+    cdsEstMovimentoQTDAPO: TFloatField;
+    cdsEstMovimentoORIMOV: TStringField;
+    cdsEstMovimentoCODCCU: TIntegerField;
+    cdsEstMovimentoCODCTF: TIntegerField;
+    cdsEstMovimentoHORMOV: TIntegerField;
+    cdsEstMovimentoMIGMOV: TBooleanField;
+    cdsEstMovimentoCUSPRO: TFloatField;
+    cdsEstMovimentoANOASS: TIntegerField;
+    cdsEstMovimentoVLRANT: TFloatField;
+    cdsEstMovimentoVLRAPOS: TFloatField;
+    cdsEstMovimentoCUSTMEDPRO: TFloatField;
+    cdsEstMovimentoregistro_integrado: TBooleanField;
+    cdsEstMovimentodata_integracao: TSQLTimeStampField;
     sdsProdutos: TSQLDataSet;
     dspProdutos: TDataSetProvider;
     cdsProdutos: TClientDataSet;
+    sdsEmpresa: TSQLDataSet;
+    sdsEmpresaNomeCliente: TStringField;
+    sdsEmpresaApel: TStringField;
+    sdsEmpresaCdigo: TSmallintField;
+    sdsEmpresaTipo: TStringField;
+    sdsEmpresaEndereo: TStringField;
+    sdsEmpresaBairro: TStringField;
+    sdsEmpresaCEP: TStringField;
+    sdsEmpresaCidade: TStringField;
+    sdsEmpresaEstado: TStringField;
+    sdsEmpresaPessoa: TStringField;
+    sdsEmpresaCNPJCPF: TStringField;
+    sdsEmpresaIEstRG: TStringField;
+    sdsEmpresaFone: TStringField;
+    sdsEmpresaRamal: TStringField;
+    sdsEmpresacd_pais: TStringField;
+    sdsEmpresacd_municipio_ibge: TIntegerField;
+    dspEmpresa: TDataSetProvider;
+    cdsEmpresa: TClientDataSet;
+    cdsEmpresaNomeCliente: TStringField;
+    cdsEmpresaApel: TStringField;
+    cdsEmpresaCdigo: TSmallintField;
+    cdsEmpresaTipo: TStringField;
+    cdsEmpresaEndereo: TStringField;
+    cdsEmpresaBairro: TStringField;
+    cdsEmpresaCEP: TStringField;
+    cdsEmpresaCidade: TStringField;
+    cdsEmpresaEstado: TStringField;
+    cdsEmpresaPessoa: TStringField;
+    cdsEmpresaCNPJCPF: TStringField;
+    cdsEmpresaIEstRG: TStringField;
+    cdsEmpresaFone: TStringField;
+    cdsEmpresaRamal: TStringField;
+    cdsEmpresacd_pais: TStringField;
+    cdsEmpresacd_municipio_ibge: TIntegerField;
+    mBlocagemNum_Endereco: TStringField;
+    sdsEmpresanro_endereco: TStringField;
+    cdsEmpresanro_endereco: TStringField;
+    mBlocagemGerou_Pre_Contrato: TStringField;
+    sdsContratoPRE_CONTRATO: TStringField;
+    sdsContratoENCERRADO: TStringField;
+    sdsContratoGEROU_PRE_CONTRATO: TStringField;
+    cdsContratoPRE_CONTRATO: TStringField;
+    cdsContratoENCERRADO: TStringField;
+    cdsContratoGEROU_PRE_CONTRATO: TStringField;
+    mBlocagemEncerrado: TStringField;
+    mBlocagemPre_Contrato: TStringField;
+    mBlocagemDTCobranca: TDateField;
+    sdsContratoNUM_CONTRATO_ANT: TStringField;
+    cdsContratoNUM_CONTRATO_ANT: TStringField;
+    mBlocagemNum_Contrato_Ant: TStringField;
+    qPessoa: TSQLQuery;
+    qPessoaNOME: TStringField;
+    qPessoaEMAIL_NFE: TStringField;
+    mBlocagemEmail: TStringField;
+    mBlocagemID_Cliente: TIntegerField;
     sdsProdutosCodigo: TStringField;
     sdsProdutosNomeProduto: TStringField;
     sdsProdutosTipo: TStringField;
@@ -262,27 +425,23 @@ type
     cdsProdutosgera_fci: TBooleanField;
     cdsProdutosnr_controle_fci: TStringField;
     procedure DataModuleCreate(Sender: TObject);
-    procedure cdsAssinatura_LivroBeforeInsert(DataSet: TDataSet);
-    procedure cdsAssinatura_LivroAfterInsert(DataSet: TDataSet);
-    procedure cdsAssinatura_LivroBeforePost(DataSet: TDataSet);
+    procedure dspEstMovimentoGetTableName(Sender: TObject;
+      DataSet: TDataSet; var TableName: String);
   private
     { Private declarations }
 
   public
     { Public declarations }
-    vMsgErro : String;
-    ctCommand : String;
-    vItemAssinatura : Integer;
-
-    procedure prc_Localizar(ID : Integer); //-1 = Inclusão
-    procedure prc_Inserir;
-    procedure prc_Gravar;
-    procedure prc_Excluir;
+    procedure prc_Abrir_EstMovimento;
 
   end;
 
 var
-  DMCadAssinatura: TDMCadAssinatura;
+  DMBlocagem: TDMBlocagem;
+  ctEmpresasEBS : String;
+  ctContrato    : String;
+  ctEstMovimento : String;
+
 
 implementation
 
@@ -292,78 +451,27 @@ uses DmdDatabase, DmdDatabase_EBS;
 
 { TDMCadPais }
 
-procedure TDMCadAssinatura.prc_Inserir;
-var
-  vAux : Integer;
+procedure TDMBlocagem.DataModuleCreate(Sender: TObject);
 begin
-  if not cdsAssinatura.Active then
-    prc_Localizar(-1);
-  vAux := dmDatabase.ProximaSequencia('ASSINATURA',0);
-
-  cdsAssinatura.Insert;
-  cdsAssinaturaID.AsInteger := vAux + 1;
-end;
-
-procedure TDMCadAssinatura.prc_Excluir;
-begin
-  if not(cdsAssinatura.Active) or (cdsAssinatura.IsEmpty) then
-    exit;
-  cdsAssinatura_Livro.First;
-  while not cdsAssinatura_Livro.Eof do
-    cdsAssinatura_Livro.Delete;
-  cdsAssinatura.Delete;
-  cdsAssinatura.ApplyUpdates(0);
-end;
-
-procedure TDMCadAssinatura.prc_Gravar;
-begin
-  vMsgErro := '';
-  if trim(cdsAssinaturaNOME.AsString) = '' then
-    vMsgErro := vMsgErro + #13 + '*** Nome não informado!';
-  if StrToFloat(FormatFloat('0.00',cdsAssinaturaVALOR.AsFloat)) <= 0 then
-    vMsgErro := vMsgErro + #13 + '*** Valor não informado!';
-  if vMsgErro <> '' then
-    exit;
-  cdsAssinatura.Post;
-  cdsAssinatura.ApplyUpdates(0);
-end;
-
-procedure TDMCadAssinatura.prc_Localizar(ID : Integer);
-begin
-  cdsAssinatura.Close;
-  sdsAssinatura.CommandText := ctCommand;
-  if ID <> 0 then
-    sdsAssinatura.CommandText := sdsAssinatura.CommandText
-                         + ' WHERE ID = ' + IntToStr(ID);
+  ctEmpresasEBS  := sdsEmpresa.CommandText;
+  ctContrato     := sdsContrato.CommandText;
+  ctEstMovimento := sdsEstMovimento.CommandText;
+  cdsProdutos.Open;
   cdsAssinatura.Open;
 end;
 
-procedure TDMCadAssinatura.DataModuleCreate(Sender: TObject);
+procedure TDMBlocagem.prc_Abrir_EstMovimento;
 begin
-  ctCommand := sdsAssinatura.CommandText;
-  cdsProdutos.Open;
-  cdsPeriodo.Open;
+  cdsEstMovimento.Close;
+  sdsEstMovimento.CommandText := ctEstMovimento
+                               + ' WHERE CODLOC = ' + QuotedStr('99999');
+  cdsEstMovimento.Open;
 end;
 
-procedure TDMCadAssinatura.cdsAssinatura_LivroBeforeInsert(
-  DataSet: TDataSet);
+procedure TDMBlocagem.dspEstMovimentoGetTableName(Sender: TObject;
+  DataSet: TDataSet; var TableName: String);
 begin
-  cdsAssinatura_Livro.Last;
-  vItemAssinatura := cdsAssinatura_LivroITEM.AsInteger;
-end;
-
-procedure TDMCadAssinatura.cdsAssinatura_LivroAfterInsert(
-  DataSet: TDataSet);
-begin
-  vItemAssinatura := vItemAssinatura + 1;
-  cdsAssinatura_LivroITEM.AsInteger := vItemAssinatura;
-end;
-
-procedure TDMCadAssinatura.cdsAssinatura_LivroBeforePost(
-  DataSet: TDataSet);
-begin
-  if trim(cdsAssinatura_LivroCOD_PRODUTO_EBS.AsString) = '' then
-    Abort;
+  TableName := 'ESTMOVIMENTO';
 end;
 
 end.
